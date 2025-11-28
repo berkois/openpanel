@@ -8,5 +8,14 @@ keywords:
   - analytics
   - openpanel
   - monitoring
+# Add your project homepage URL (optional but recommended)
+home: https://github.com/yashGoyal40
+# Add your repository URL (optional but recommended)
+sources:
+  - https://github.com/yashGoyal40/openpanel
+# Add an icon URL (optional)
+# icon: https://example.com/icon.png
 maintainers:
-  - name: OpenPanel Team
+  - name: yashGoyal40
+    # Add email for better contact (optional but recommended)
+    email: yashg4118@gmail.com
