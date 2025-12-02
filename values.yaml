@@ -1,10 +1,6 @@
 # Default values for openpanel
 # This is a YAML-formatted file.
 
-# Global settings
-global:
-  namespace: openpanel
-
 # PostgreSQL Configuration
 # Set postgresql.enabled=true to deploy PostgreSQL in Kubernetes
 # Set postgresql.enabled=false to use external PostgreSQL

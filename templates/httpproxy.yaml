@@ -3,7 +3,7 @@ apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
   name: openpanel-httpproxy
-  namespace: {{ .Values.global.namespace }}
+  namespace: {{ .Release.Namespace }}
   labels:
     app: openpanel
     component: ingress

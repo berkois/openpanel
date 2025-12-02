@@ -6,18 +6,18 @@
   Ingress is configured for: {{ .Values.ingress.fqdn }}
 {{- end }}
 {{- else }}
-  export NODE_PORT=$(kubectl get --namespace {{ .Values.global.namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ .Values.dashboard.service.name }})
-  export NODE_IP=$(kubectl get nodes --namespace {{ .Values.global.namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
+  export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ .Values.dashboard.service.name }})
+  export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
   echo http://$NODE_IP:$NODE_PORT
 {{- end }}
 
 2. Check the status of your deployment:
-  kubectl get pods --namespace {{ .Values.global.namespace }}
+  kubectl get pods --namespace {{ .Release.Namespace }}
 
 3. View logs:
-  kubectl logs -f deployment/{{ .Values.api.service.name }} --namespace {{ .Values.global.namespace }}
-  kubectl logs -f deployment/{{ .Values.dashboard.service.name }} --namespace {{ .Values.global.namespace }}
-  kubectl logs -f deployment/{{ .Values.worker.service.name }} --namespace {{ .Values.global.namespace }}
+  kubectl logs -f deployment/{{ .Values.api.service.name }} --namespace {{ .Release.Namespace }}
+  kubectl logs -f deployment/{{ .Values.dashboard.service.name }} --namespace {{ .Release.Namespace }}
+  kubectl logs -f deployment/{{ .Values.worker.service.name }} --namespace {{ .Release.Namespace }}
 
 4. PostgreSQL Configuration:
 {{- if .Values.postgresql.enabled }}
