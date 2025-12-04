@@ -103,7 +103,7 @@ clickhouse:
   enabled: true
   image:
     repository: clickhouse/clickhouse-server
-    tag: "24.3.2-alpine"
+    tag: "25.10.2.65"
   service:
     name: op-ch
     httpPort: 8123
