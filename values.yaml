@@ -1,15 +1,16 @@
 # Default values for openpanel
 # This is a YAML-formatted file.
 
-# Global configuration values that apply across all components of the OpenPanel deployment.
-# These values can be overridden by individual component configurations.
-# Common use cases include:
-# - Setting shared image registries and pull secrets
-# - Configuring common environment variables
-# - Defining cluster-wide resource constraints
-# - Specifying shared storage classes or persistence settings
+# Global configuration
+# Allows overriding container image registry and setting imagePullSecrets
 global:
+  # If set, prefixes all component images, e.g. "my-registry.example.com"
   imageRegistry: ""
+  # List of imagePullSecrets to attach to all Pods
+  # Example:
+  # imagePullSecrets:
+  #   - name: my-regcred
+  imagePullSecrets: []
 
 # PostgreSQL Configuration
 # Set postgresql.enabled=true to deploy PostgreSQL in Kubernetes
