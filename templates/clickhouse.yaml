@@ -99,7 +99,7 @@ spec:
     spec:
       containers:
         - name: clickhouse
-          image: {{ .Values.clickhouse.image.repository }}:{{ .Values.clickhouse.image.tag }}
+          image: {{ if .Values.global.registry }}{{ .Values.global.registry }}/{{ end }}{{ .Values.clickhouse.image.repository }}:{{ .Values.clickhouse.image.tag }}
           ports:
             - containerPort: {{ .Values.clickhouse.service.httpPort }}
               name: http

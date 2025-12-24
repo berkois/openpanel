@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: {{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}
+          image: {{ if .Values.global.registry }}{{ .Values.global.registry }}/{{ end }}{{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}
           ports:
             - containerPort: {{ .Values.api.service.port }}
               name: http

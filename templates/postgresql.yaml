@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: {{ .Values.postgresql.image.repository }}:{{ .Values.postgresql.image.tag }}
+          image: {{ if .Values.global.registry }}{{ .Values.global.registry }}/{{ end }}{{ .Values.postgresql.image.repository }}:{{ .Values.postgresql.image.tag }}
           ports:
             - containerPort: {{ .Values.postgresql.service.port }}
               name: postgres

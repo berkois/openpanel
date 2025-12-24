@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: dashboard
-          image: {{ .Values.dashboard.image.repository }}:{{ .Values.dashboard.image.tag }}
+          image: {{ if .Values.global.registry }}{{ .Values.global.registry }}/{{ end }}{{ .Values.dashboard.image.repository }}:{{ .Values.dashboard.image.tag }}
           ports:
             - containerPort: {{ .Values.dashboard.service.port }}
               name: http
