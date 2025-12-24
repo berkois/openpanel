@@ -1,6 +1,16 @@
 # Default values for openpanel
 # This is a YAML-formatted file.
 
+# Global configuration values that apply across all components of the OpenPanel deployment.
+# These values can be overridden by individual component configurations.
+# Common use cases include:
+# - Setting shared image registries and pull secrets
+# - Configuring common environment variables
+# - Defining cluster-wide resource constraints
+# - Specifying shared storage classes or persistence settings
+global:
+  imageRegistry: ""
+
 # PostgreSQL Configuration
 # Set postgresql.enabled=true to deploy PostgreSQL in Kubernetes
 # Set postgresql.enabled=false to use external PostgreSQL
